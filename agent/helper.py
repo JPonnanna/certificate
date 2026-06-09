@@ -6,7 +6,7 @@ from PIL import Image
 import google.generativeai as genai
 
 # Set your Gemini API key
-genai.configure(api_key="AIzaSyCaepqj4cvBjIoM_frul2WCzE2tKEFhbSc")
+genai.configure(api_key="")
 
 def extract_details(image_path,prompt):
     # # === Step 1: Convert PDF to Image ===
