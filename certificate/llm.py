@@ -19,7 +19,7 @@ def extract_details(pdf_path):
     print(f"✅ Saved first page as image: {image_path}")
 
     # === Step 2: Send Image to Gemini ===
-    genai.configure(api_key="AIzaSyCaepqj4cvBjIoM_frul2WCzE2tKEFhbSc")
+    genai.configure(api_key=" ")
     model = genai.GenerativeModel("gemini-2.5-flash")
 
     # Load the image
@@ -32,12 +32,5 @@ def extract_details(pdf_path):
 
     response = model.generate_content([prompt, img])
     print("✅ Details extracted from image using Gemini")
-
-    # (Optional) Clean up file after processing
-    # try:
-    #     os.remove(image_path)
-    #     print("🧹 Temporary image file removed")
-    # except Exception as e:
-    #     print("⚠️ Could not remove image file:", e)
 
     return response.text
